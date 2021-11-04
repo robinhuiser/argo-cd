@@ -92,7 +92,7 @@ WORKDIR /src
 ADD ["ui/package.json", "./"]
 
 
-RUN yarn install --network-timeout 1000000
+RUN yarn install --network-timeout 1000000 || yarn install --network-timeout 1000000 || yarn install --network-timeout 1000000
 
 ADD ["ui/", "."]
 
