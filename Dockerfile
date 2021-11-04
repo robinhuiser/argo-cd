@@ -90,10 +90,10 @@ FROM docker.io/library/node:12.18.4 as argocd-ui
 WORKDIR /src
 ADD ["ui/package.json", "ui/yarn.lock", "./"]
 
-#RUN yarn config set network-timeout 1000000
-RUN yarn config set proxy $http_proxy
-RUN yarn config set https-proxy $https_proxy
-RUN yarn install --network-timeout 1000000000
+# RUN yarn config set network-timeout 1000000
+# RUN yarn config set proxy $http_proxy
+# RUN yarn config set https-proxy $https_proxy
+RUN yarn install --network-timeout 1000000
 
 
 ADD ["ui/", "."]
